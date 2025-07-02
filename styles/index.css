@@ -142,7 +142,7 @@ header {
 }
 
 .net-table {
-    --border: 0.5px solid rgb(45, 49, 70);
+    --border: 0.75px solid rgb(45, 49, 70);
     width: 100%;
     border-collapse: collapse;
     background: transparent;
