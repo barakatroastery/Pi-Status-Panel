@@ -41,7 +41,7 @@ def format_memory_size(bytes_size: int) -> str:
     return f"{bytes_size} Bytes"
 
 
-# Глобальные переменные сети интернет:
+# Глобальные переменные сети:
 class NetVars:
     # Название сетей для отслеживания:
     net_lan_name: str = "eth0"
@@ -134,9 +134,28 @@ class CPUCores:
     def thread_cpu_cores_check() -> None:
         while True:
             CPUCores.cpu_cores = [
-                (f"Core {i}", str(pct)) 
+                (f"Core {i}", str(pct))
                 for i, pct in enumerate(psutil.cpu_percent(interval=CPUCores.check_interval, percpu=True))]
             CPUCores.cpu_usage = round(sum([float(b) for a, b in CPUCores.cpu_cores])/len(CPUCores.cpu_cores), 1)
+
+
+# Глобальные переменные диска
+class Disk:
+    # Скорость чтения/записи на диск (B/s):
+    disk_read_bs:  int = 0
+    disk_write_bs: int = 0
+
+    # Функция отдельного потока для отслеживания нагрузки на диск:
+    @staticmethod
+    def thread_disk_check() -> None:
+        interval = 1.0
+        while True:
+            disk1 = psutil.disk_io_counters()
+            time.sleep(interval)
+            disk2 = psutil.disk_io_counters()
+            Disk.disk_read_bs  = (disk2.read_bytes-disk1.read_bytes)   / interval
+            Disk.disk_write_bs = (disk2.write_bytes-disk1.write_bytes) / interval
+
 
 # Получить имя хоста:
 def get_hostname() -> str:
@@ -319,6 +338,16 @@ def get_storage_total_size() -> int|str:
         return int(get_cmd_result("df --output=size -B1 / | tail -n1"))
     except Exception:
         return "n/a"
+
+
+# Чтение с диска (B/s)
+def get_disk_read_bs() -> int:
+    return int(Disk.disk_read_bs)
+
+
+# Запись на диск (B/s)
+def get_disk_write_bs() -> int:
+    return int(Disk.disk_write_bs)
 
 
 # Получить сколько байт в секунду получаем по LAN:

@@ -47,51 +47,62 @@ Thread(target=NetVars.thread_network_traffic_check, args=(), daemon=True).start(
 Thread(target=CPUCores.thread_cpu_cores_check, args=(), daemon=True).start()
 
 
+# Запускаем отдельный поток для отслеживания нагрузки на диск:
+Thread(target=Disk.thread_disk_check, args=(), daemon=True).start()
+
 # Название сетей для отслеживания:
 NetVars.net_lan_name        = "eth0"   # Проводная сеть.
 NetVars.net_wifi_name       = "wlan0"  # WiFi сеть.
-NetVars.net_counter_timeout = 10.0  # Каждые 10 секунд сбрасывать пик.
+NetVars.net_counter_timeout = 10.0     # Каждые 10 секунд сбрасывать пик.
 
 
 # Можете перевести на свой язык:
 USE_LANG = True  # Если установить False то будет использоваться English.
 INTERFACE_LANG = {
     "classes": {
-        "ghz":          "ГГц",
-        "mem-free":     "Свободно:",
-        "mem-used":     "Использовано:",
-        "mem-total":    "Всего:",
+        "ghz":           "ГГц",
+        "mem-free":      "Свободно:",
+        "mem-used":      "Использовано:",
+        "mem-total":     "Всего:",
     },
     "ids": {
         # Основное:
-        "main":         "Основное",
-        "hostname":     "Имя хоста:",
-        "ipv4":         "IPv4:",
-        "username":     "Имя пользователя:",
-        "platform":     "Платформа:",
-        "osname":       "Система:",
+        "main":          "Основное",
+        "hostname":      "Имя хоста:",
+        "ipv4":          "IPv4:",
+        "username":      "Имя пользователя:",
+        "platform":      "Платформа:",
+        "osname":        "Система:",
+        "h264-freq":     "Частота H264:",
+        "isp-freq":      "Частота ISP:",
+        "uart-freq":     "Частота UART:",
 
         # Процессор:
-        "cpu":          "Процессор",
-        "arch":         "Архитектура:",
-        "cpu-bits":     "Разрядность:",
-        "cpu-temp":     "Температура:",
-        "cpu-freq":     "Частота:",
-        "cpu-min-freq": "Минимальная частота:",
-        "cpu-max-freq": "Максимальная частота:",
-        "cpu-all-freq": "Все частоты:",
-        "cpu-usage":    "Загруженность ЦП:",
-        "cpu-cores":    "Нагрузка на ядра:",
+        "cpu":           "Процессор",
+        "arch":          "Архитектура:",
+        "cpu-bits":      "Разрядность:",
+        "cpu-temp":      "Температура:",
+        "cpu-freq":      "Частота:",
+        "cpu-min-freq":  "Минимальная частота:",
+        "cpu-max-freq":  "Максимальная частота:",
+        "cpu-all-freq":  "Все частоты:",
+        "cpu-usage":     "Загруженность ЦП:",
+        "cpu-cores":     "Нагрузка на ядра:",
 
         # Графика:
-        "gpu":          "Графический процессор",
-        "gpu-freq":     "Частота:",
-        "gpu-min-freq": "Минимальная частота:",
+        "gpu":           "Графический процессор",
+        "gpu-freq":      "Частота:",
+        "gpu-min-freq":  "Минимальная частота:",
 
         # Память:
-        "memory":       "Память",
-        "ram":          "ОЗУ",
-        "storage":      "Хранилище",
+        "memory":        "Память",
+        "ram":           "ОЗУ",
+        "storage":       "Хранилище",
+
+        # Использование диска:
+        "disk-usage":    "Использование диска",
+        "disk-read-bs":  "Чтение:",
+        "disk-write-bs": "Запись:",
 
         # Интернет:
         "network":              "Сеть",
@@ -158,6 +169,9 @@ async def index(request: Request) -> Response:
             "storage-free-size-val":  format_memory_size(get_storage_free_size()),
             "storage-used-size-val":  format_memory_size(get_storage_used_size()),
             "storage-total-size-val": format_memory_size(get_storage_total_size()),
+
+            "disk-read-bs-val":       format_memory_size(get_disk_read_bs()),
+            "disk-write-bs-val":      format_memory_size(get_disk_write_bs()),
 
             "lan-rx-bs-val":          format_memory_size(get_lan_rx_bs()),
             "lan-tx-bs-val":          format_memory_size(get_lan_tx_bs()),

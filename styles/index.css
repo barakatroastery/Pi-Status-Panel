@@ -194,7 +194,7 @@ header {
     height: 100%;
     background-color: rgb(255, 255, 255);
     width: 0%;
-    border-radius: 4px;
+    /* border-radius: 4px; */ /* Закругление шкалы прогресса */
     transition: width 0.25s ease, background-color 0.25s ease;
 }
 
@@ -248,7 +248,7 @@ header {
 
 .progress-ring-value {
     stroke: var(--stroke-value);
-    stroke-linecap: round;
+    /* stroke-linecap: round; */ /* Закругление круга прогресса */
     transition: stroke-dashoffset 0.5s ease;
 }
 
