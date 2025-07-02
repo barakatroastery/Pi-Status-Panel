@@ -174,6 +174,33 @@ def get_osname() -> str:
         return "n/a"
 
 
+# Получить частоту h264 (в ГГц):
+def get_h264_freq() -> str:
+    try:
+        value = get_cmd_result("vcgencmd measure_clock h264")
+        return str(round(int(value.split("=")[1])/1000/1000/1000, 2))
+    except Exception:
+        return "n/a"
+
+
+# Получить частоту isp (в ГГц):
+def get_isp_freq() -> str:
+    try:
+        value = get_cmd_result("vcgencmd measure_clock isp")
+        return str(round(int(value.split("=")[1])/1000/1000/1000, 2))
+    except Exception:
+        return "n/a"
+
+
+# Получить частоту uart (в ГГц):
+def get_uart_freq() -> str:
+    try:
+        value = get_cmd_result("vcgencmd measure_clock uart")
+        return str(round(int(value.split("=")[1])/1000/1000/1000, 2))
+    except Exception:
+        return "n/a"
+
+
 # Получить архитектуру процессора:
 def get_arch() -> str:
     return get_cmd_result("uname -m")
@@ -198,7 +225,8 @@ def get_cpu_temp() -> str:
 # Получить текущую частоту процессора (в ГГц):
 def get_cpu_freq() -> str:
     try:
-        return str(round(int(get_cmd_result("cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq"))/1000/1000, 2))
+        value = get_cmd_result("vcgencmd measure_clock arm")
+        return str(round(int(value.split("=")[1])/1000/1000/1000, 2))
     except Exception:
         return "n/a"
 
@@ -238,8 +266,8 @@ def get_cpu_cores() -> list:
 # Получить текущую частоту графического процессора (в ГГц):
 def get_gpu_freq() -> str:
     try:
-        value = get_cmd_result("vcgencmd get_config gpu_freq")
-        return str(round(int(value.split("=")[1])/1000, 2))
+        value = get_cmd_result("vcgencmd measure_clock v3d")
+        return str(round(int(value.split("=")[1])/1000/1000/1000, 2))
     except Exception:
             return "n/a"
 

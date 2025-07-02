@@ -136,6 +136,9 @@ async def index(request: Request) -> Response:
             "username-val":           get_username(),
             "platform-val":           get_platform(),
             "osname-val":             get_osname(),
+            "h264-freq-val":          get_h264_freq(),
+            "isp-freq-val":           get_isp_freq(),
+            "uart-freq-val":          get_uart_freq(),
 
             "arch-val":               get_arch(),
             "cpu-bits-val":           get_cpu_bits(),
