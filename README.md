@@ -1,5 +1,5 @@
 # RaspberryPi Status Panel
-![](https://github.com/user-attachments/assets/70398f22-f1eb-460c-b28e-3cd99329241a)
+![](https://github.com/user-attachments/assets/a8a67d26-9e34-4d98-986b-43951d04959e)
 
 ### Для запуска сервиса вам потребуется:
 - Python не ниже (но лучше) 3.11.8
@@ -42,10 +42,9 @@ $ ```sudo apt install libraspberrypi-bin```</br>
 
 #
 
-### Примеры:
-![](https://github.com/user-attachments/assets/5ffb12f1-7c88-43f8-a2f9-a68241750d31)
-![](https://github.com/user-attachments/assets/00fb7fcf-75b5-417b-8671-8676874b71a5)
-![](https://github.com/user-attachments/assets/078c41c6-8f46-468f-9c1d-fd37cd731fe8)
+### Демонстрация:
+![](https://github.com/user-attachments/assets/f9100762-bed6-4d17-9770-e3d1ab06f214)
+![](https://github.com/user-attachments/assets/8b18c68f-d19d-4250-ae8b-fabce6d57a20)
 
 #
 
