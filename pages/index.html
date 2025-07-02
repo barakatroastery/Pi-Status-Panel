@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico?v=010720251425">
+        <link rel="stylesheet"    type="text/css"     href="styles/index.css?v=010720251425">
+        <script                                        src="js/server.js?v=010720251425"></script>
+        <title>Raspberry Pi Status</title>
+    </head>
+    <body>
+        <header>
+            <div id="header-title">Raspberry Pi</div>
+        </header>
+
+        <div class="content breakable">
+            <div class="main">
+                <div class="title" id="main">Main</div>
+                <div class="inline">
+                    <div id="hostname">Host name:</div>
+                    <div id="hostname-val">n/a</div>
+                </div>
+                <div class="inline">
+                    <div id="ipv4">IPv4:</div>
+                    <div id="ipv4-val">n/a</div>
+                </div>
+                <div class="inline">
+                    <div id="username">User name:</div>
+                    <div id="username-val">n/a</div>
+                </div>
+                <div class="inline">
+                    <div id="platform">Platform:</div>
+                    <div id="platform-val">n/a</div>
+                </div>
+                <div class="inline">
+                    <div id="osname">System:</div>
+                    <div id="osname-val">n/a</div>
+                </div>
+            </div>
+
+            <div class="cpu">
+                <div class="title" id="cpu">Processor:</div>
+                <div class="inline">
+                    <div id="arch">Architecture:</div>
+                    <div id="arch-val">n/a</div>
+                </div>
+                <div class="inline">
+                    <div id="cpu-bits">Bits:</div>
+                    <div class="inline-row">
+                        <div id="cpu-bits-val">n/a</div>
+                        <div>bits</div>
+                    </div>
+                </div>
+                <div class="inline" id="cpu-temp-text">
+                    <div id="cpu-temp">Temperature:</div>
+                    <div class="inline-row">
+                        <div id="cpu-temp-val">n/a</div>
+                        <div>°C</div>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div id="cpu-freq">Frequencie:</div>
+                    <div class="inline-row">
+                        <div id="cpu-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div id="cpu-min-freq">Minimum frequency:</div>
+                    <div class="inline-row">
+                        <div id="cpu-min-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div id="cpu-max-freq">Maximum frequency:</div>
+                    <div class="inline-row">
+                        <div id="cpu-max-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div id="cpu-all-freq">All frequencies:</div>
+                    <div class="inline-row">
+                        <div id="cpu-all-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+                <div class="cpu-usage-block">
+                    <div class="inline-no-border">
+                        <div id="cpu-usage">CPU load:</div>
+                    </div>
+                    <div id="cpu-usage-container"></div>
+                </div>
+                <div class="inline"></div>
+                <div class="cpu-cores-usage-block">
+                    <div class="inline-no-border">
+                        <div id="cpu-cores">Сores load:</div>
+                    </div>
+                    <div id="cpu-cores-usage-container"></div>
+                    <div class="inline-no-border"></div>
+                </div>
+            </div>
+
+            <div class="gpu">
+                <div class="title" id="gpu">Graphics processor:</div>
+                <div class="inline">
+                    <div id="gpu-freq">Frequencie:</div>
+                    <div class="inline-row">
+                        <div id="gpu-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+                <div class="inline">
+                    <div id="gpu-min-freq">Minimum frequency:</div>
+                    <div class="inline-row">
+                        <div id="gpu-min-freq-val">n/a</div>
+                        <div class="ghz">GHz</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="memory">
+                <div class="title" id="memory">Memory</div>
+                <div class="blocks inline">
+                    <div class="blocks-block">
+                        <div class="blocks-block-title" id="ram">RAM:</div>
+                        <div id="ring-ram-using" class="progress-ring"></div>
+                        <div class="memory-stats">
+                            <div class="inline">
+                                <div class="mem-free">Freely:</div>
+                                <div id="ram-free-size-val">n/a</div>
+                            </div>
+                            <div class="inline">
+                                <div class="mem-used">Used:</div>
+                                <div id="ram-used-size-val">n/a</div>
+                            </div>
+                            <div class="inline">
+                                <div class="mem-total">Total:</div>
+                                <div id="ram-total-size-val">n/a</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blocks-block">
+                        <div class="blocks-block-title" id="storage">Storage:</div>
+                        <div id="ring-storage-using" class="progress-ring"></div>
+                        <div class="memory-stats">
+                            <div class="inline">
+                                <div class="mem-free">Freely:</div>
+                                <div id="storage-free-size-val">n/a</div>
+                            </div>
+                            <div class="inline">
+                                <div class="mem-used">Used:</div>
+                                <div id="storage-used-size-val">n/a</div>
+                            </div>
+                            <div class="inline">
+                                <div class="mem-total">Total:</div>
+                                <div id="storage-total-size-val">n/a</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="network">
+                <div class="title" id="network">Network</div>
+                <table class="net-table">
+                    <thead>
+                        <tr>
+                            <th><div id="net-properties">Properties:</div></th>
+                            <th><div id="lan">LAN:</div></th>
+                            <th><div id="wifi">WiFi:</div></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><div id="net-receive-bs">Receive:</div></td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="lan-rx-bs-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="wifi-rx-bs-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div id="net-receive-max-b">Receive max:</div></td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="lan-rx-max-b-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="wifi-rx-max-b-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div id="net-receive-total-b">Received total:</div></td>
+                            <td class="table-val"><div id="lan-rx-b-val">n/a</div></td>
+                            <td class="table-val"><div id="wifi-rx-b-val">n/a</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="title"></div>
+                <table class="net-table">
+                    <tbody>
+                        <tr>
+                            <td><div id="net-transmit-bs">Transmit:</div></td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="lan-tx-bs-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="wifi-tx-bs-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div id="net-transmit-max-b">Transmit max:</div></td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="lan-tx-max-b-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                            <td class="table-val">
+                                <div class="inline-row-center">
+                                    <div id="wifi-tx-max-b-val">n/a</div>
+                                    <div> / s</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><div id="net-transmit-total-b">Transmitted total:</div></td>
+                            <td class="table-val"><div id="lan-tx-b-val">n/a</div></td>
+                            <td class="table-val"><div id="wifi-tx-b-val">n/a</div></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="separator"></div>
+            <div class="timestamp">
+                <div class="inline">
+                    <div id="timestamp">Recent information updates:</div>
+                    <div id="timestamp-val">n/a</div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Функция для запроса и обновления данных:
+            async function fetchAndUpdate() {
+                sendJsonPost("/api/status", null).then(result => {
+                    console.log("Server:", result);
+                    if (result) {
+                        setProgressRingById("ring-ram-using", result["other"]["ram-used-percent"], 20);
+                        setProgressRingById("ring-storage-using", result["other"]["storage-used-percent"], 20);
+                        updateElementsFromJson(result);
+                        CreateCPUUsageBars(result["other"]["cpu-usage-val"], "cpu-usage-container");
+                        CreateCPUCoreUsageBars(result["other"]["cpu-cores-val"], "cpu-cores-usage-container");
+
+                        // Проверяем температуру процессора и меняем цвет текста:
+                        const cpu_text = document.getElementById("cpu-temp-text");
+                        if (document.getElementById("cpu-temp-val").textContent >= 75) {
+                            cpu_text.classList.add('text-danger');
+                        } else {
+                            cpu_text.classList.remove('text-danger');
+                        }
+                    }
+                // Запускаем следующий запрос только после окончания текущего (пауза 1000 мс):
+                }).finally(() => { setTimeout(fetchAndUpdate, 1000); });
+            }
+
+            // Запуск после полной загрузки DOM:
+            window.addEventListener("DOMContentLoaded", () => {
+                init_websize();
+                fetchAndUpdate();
+            });
+        </script>
+    </body>
+
+    <!--
+        < PiStatusPanel >
+        By LukovDev (@mr_lukov).
+        License: MIT
+        lakuworx@gmail.com
+
+        Thank you for Using!
+    -->
+</html>

@@ -1,0 +1,307 @@
+@import url("fonts.css");
+
+* {
+
+    scrollbar-color: rgb(255, 255, 255) rgb(10, 12, 18);
+    font-family: "montserrat-regular";
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: rgb(14, 16, 22);
+    color: rgb(255, 255, 255);
+}
+
+header {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    font-size: 32px;
+}
+
+#header-title {
+    font-family: "montserrat-medium";
+    font-size: 32px;
+}
+
+#timestamp {
+    font-size: 14px;
+}
+
+#timestamp-val {
+    font-size: 14px;
+}
+
+.content {
+    width: 75%;
+    max-width: 640px;
+    background-color: rgb(22, 24, 34);
+    border-radius: 16px;
+    border-color: rgba(0, 0, 0, 0.25);
+    border-width: 4px;
+    border-style: solid;
+    padding: 18px 64px 32px 64px;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 0 0px 24px rgb(4, 6, 10);
+    margin: auto auto;
+    margin-bottom: 64px;
+}
+
+.breakable {
+    hyphens: auto;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0px;
+    border-bottom: 0.5px solid rgb(45, 49, 70);
+}
+
+.inline:last-child {
+    border-bottom: none;
+}
+
+.inline-no-border {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0px;
+}
+
+.inline-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.inline-row-center {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+}
+
+.title {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin-top: 32px;
+    margin-bottom: 16px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.separator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 48px;
+    margin-bottom: 48px;
+    border-bottom: 1px solid rgb(86, 92, 128);
+}
+
+.blocks {
+    display: flex;
+    flex-direction: row;
+    gap: 48px;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 8px 0px;
+    margin: 0px 0px;
+}
+
+.blocks-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+}
+
+.blocks-block-title {
+    font-size: 18px;
+    text-align: center;
+}
+
+.net-table {
+    --border: 0.5px solid rgb(45, 49, 70);
+    width: 100%;
+    border-collapse: collapse;
+    background: transparent;
+    table-layout: fixed;
+}
+
+.net-table th, .net-table td {
+    font-weight: normal;
+    padding: 8px 4px;
+    border: none;
+}
+
+.net-table th {
+    text-align: center;
+}
+
+.net-table td {
+    text-align: left;
+    border-right: var(--border);
+}
+
+.net-table .table-val {
+    text-align: center;
+}
+
+.net-table tbody td {
+    border-top: var(--border);
+}
+
+.net-table tbody tr:first-child td {
+    border-top: none;
+}
+
+.net-table td:last-child {
+    border-right: none;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 8px;
+    background-color: rgb(32, 34, 48);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar-fill {
+    display: block;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    width: 0%;
+    border-radius: 4px;
+    transition: width 0.25s ease, background-color 0.25s ease;
+}
+
+.progress-danger {
+    background-color: rgb(255, 64, 64);
+    --stroke-value: rgb(255, 64, 64);
+}
+
+.text-danger {
+    color: rgb(255, 64, 64);
+}
+
+.progress-ring {
+    --size: 192px;
+    --stroke-width: 8px;
+    --stroke-bg: rgb(32, 34, 48);
+    --stroke-value: rgb(255, 255, 255);
+    --font-color: rgb(255, 255, 255);
+    width: var(--size);
+    aspect-ratio: 1 / 1;
+    position: relative;
+    align-self: center;
+}
+
+.progress-ring::after {
+    content: attr(data-value) "%";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "montserrat-regular";
+    font-size: 22px;
+    color: var(--font-color);
+}
+
+.progress-ring-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg, .progress-ring-value {
+    fill: none;
+    stroke-width: var(--stroke-width);
+}
+
+.progress-ring-bg {
+    stroke: var(--stroke-bg);
+}
+
+.progress-ring-value {
+    stroke: var(--stroke-value);
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.5s ease;
+}
+
+@media (max-width: 760px) {
+    * {
+        font-size: 14px;
+    }
+    .content {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        padding: 18px 32px 32px 32px;
+        margin: auto auto;
+        margin-bottom: 64px;
+        box-sizing: border-box;
+    }
+    .blocks {
+        gap: 24px;
+        margin-top: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    * {
+        font-size: 14px;
+    }
+    .content {
+        width: 100vw;
+        max-width: none;
+        margin: 0;
+        padding: 18px 32px 32px 32px;
+        margin: auto auto;
+        margin-bottom: 64px;
+        box-sizing: border-box;
+    }
+    .blocks {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 16px;
+    }
+    .progress-ring::after {
+        font-size: 20px;
+    }
+}
+
+/*
+    < PiStatusPanel >
+    By LukovDev (@mr_lukov).
+    License: MIT
+    lakuworx@gmail.com
+
+    Thank you for Using!
+*/
