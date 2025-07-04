@@ -2,7 +2,7 @@
 # server.py - Основной файл программы. Поднимает и серверную часть, и сайт.
 #
 # Запустить:
-# uvicorn server:app --host rpi5.local --port 8888 --reload
+# python3 -m uvicorn server:app --host 0.0.0.0 --port 8888 --reload
 #
 # Подключиться:
 # http://rpi5.local:8888/
