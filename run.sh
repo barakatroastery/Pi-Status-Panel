@@ -1,1 +1,1 @@
-uvicorn server:app --host rpi5.local --port 8888 --reload
+python3 -m uvicorn server:app --host 0.0.0.0 --port 8888 --reload
