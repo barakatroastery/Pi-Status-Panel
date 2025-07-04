@@ -15,7 +15,7 @@ $ ```sudo apt install uvicorn```</br>
 
 ### Для запуска сервера и сайта:
 Введите команду ниже в терминал где открыт каталог этого репозитория:</br>
-```uvicorn server:app --host 0.0.0.0 --port 8888 --reload```</br>
+```python3 -m uvicorn server:app --host 0.0.0.0 --port 8888 --reload```</br>
 
 Либо можете вызвать ```.sh``` скрипт:</br>
 ```bash run.sh```
