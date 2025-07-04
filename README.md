@@ -9,6 +9,7 @@
 $ ```pip3 install -r pypi.txt```</br>
 $ ```sudo apt update```</br>
 $ ```sudo apt install libraspberrypi-bin```</br>
+$ ```sudo apt install uvicorn```</br>
 
 #
 
